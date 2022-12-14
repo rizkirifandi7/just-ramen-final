@@ -40,46 +40,46 @@
     </nav>
 
     <div class="container">
-      <h1 class="promo-title my-4">Menu</h1>
+      <h1 class="promo-title my-4">Menu Detail</h1>
       <div class="row">
-        <?php
-      		include 'config.php';
-      		$menu = ("select * from menu order by id asc");
+            <?php
+                include 'config.php';
+                $menu = ("select * from menu order by id asc");
 
-          $dewan1 = $conn->prepare($menu);
-          $dewan1->execute();
-          $res1 = $dewan1->get_result();
-            while ($row = $res1->fetch_assoc()) {
-              $id = $row["id"];
-              $menu = $row["menu"];
-              $harga = number_format($row["harga"],2,',','.');
-              $deskripsi = $row["deskripsi"];
-
-      	?>
-        <form action="" method="post" class="col-xl-3 col-md-4 col-sm-6 col-xs-12 py-2">
-          <div class="card h-100 py-4">
-            <img class="menu-img w-100" src="assets/img/menu/<?php echo $row['img_menu']; ?>">
+                $dewan1 = $conn->prepare($menu);
+                $dewan1->execute();
+                $res1 = $dewan1->get_result();
+                    while ($row = $res1->fetch_assoc()) {
+                    $id = $row["id"];
+                    $menu = $row["menu"];
+                    $harga = number_format($row["harga"],2,',','.');
+                    $deskripsi = $row["deskripsi"];
+            ?>
+            <form action="" method="post" class="box">
+                <input type="hidden" name="id" value="<?= $fetch_product['id']; ?>">
+                <input type="hidden" name="menu" value="<?= $fetch_product['menu']; ?>">
+                <input type="hidden" name="harga" value="<?= $fetch_product['harga'];  ?>">
+                <input type="hidden" name="deskripsi" value="<?= $fetch_product['deskripsi']; ?>">
+                <input type="hidden" name="img_menu" value="<?= $fetch_product['img_menu']; ?>">
             
-            <div class="text-center mt-3">
-                <h5 class="menu-title mb-1"><?php echo $menu; ?></h5>
-                <a href="detail-menu.php" class="card-text">details menu</a>
-            </div>
-
-            <!-- <div class="card-body mt-3">
-                <p class="menu-desc card-text" style="text-align: left;"><?php echo $deskripsi; ?></p>
-            </div> -->
-            
-            <div class="">
-                <p class="price mb-0 mt-3">IDR <?php echo $harga; ?></p>
-                <input class="btn btn-primary" type="submit" value="Add Item" >
-                <input type="number" name="qty" class="mb-2 mt-2" min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="1">
-            </div>
-
-          </div>
-        </form>
+                <div class="row">
+                    <div class="content">
+                        <div class="menu"><?= $fetch_product['menu']; ?></div>
+                            <div class="flex">
+                                <div class="price"><span>Rp </span><?= formatRupiah($fetch_product['harga']); ?><span></span></div>
+                                    <input type="number" name="qty" class="qty" min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="1">
+                                </div>
+                            <div class="spec"><span>CPU&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</span>&nbsp;<?= $fetch_product['deskripsi']; ?></div>
+                            <div class="flex-btn">
+                                <input type="submit" value="add to cart" class="btn" name="add_to_cart">
+                                <input class="option-btn" type="submit" name="add_to_wishlist" value="add to wishlist">
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
         <?php } ?>
-
-      </div>
+        </div>
     </div>
 
     <section class="footer">

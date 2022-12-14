@@ -85,6 +85,40 @@
         </div>
       </div>
     </div>
+
+    <section class="footer">
+      <div class="container">
+        <footer class="row row-cols-4 py-5 mt-4">
+          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+            <a href="index.html" class="navbar-brand d-flex align-items-center mb-3 d-inline-flex">just ramen</a>
+            <p class="desc text-justify">a well known japanese restaurant in Bandung. Specialized on ramen and any japanese foods.</p>
+          </div>
+
+          <div class="col-xl-1 col-lg-1 col-md-0 col-sm-0"></div>
+
+          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+            <h5 class="nav-col mb-3">Social Media</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 d-inline-flex">Twitter</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 d-inline-flex">Instagram</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 d-inline-flex">Facebook</a></li>
+            </ul>
+          </div>
+
+          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+            <h5 class="nav-col mb-3">Our Links</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="index.php" class="nav-link p-0 d-inline-flex">Home</a></li>
+              <li class="nav-item mb-2"><a href="menu.php" class="nav-link p-0 d-inline-flex">Menu</a></li>
+              <li class="nav-item mb-2"><a href="promo.php" class="nav-link p-0 d-inline-flex">Promo</a></li>
+              <li class="nav-item mb-2"><a href="login.php" class="nav-link p-0 d-inline-flex">Login</a></li>
+            </ul>
+          </div>
+        </footer>
+      </div>
+    </section>
+
+    
     <script src="js/jquery.js"></script>
   	<script src="js/bootstrap.js" charset="utf-8"></script>
   	<script type="text/javascript">
